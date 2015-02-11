@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cf1455e-b876-49a7-aacc-121413dd4318">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     armas.`idarma` AS armas_idarma,
+     armas.`nombre` AS armas_nombre,
+     armas.`tipo` AS armas_tipo,
+     armas.`tipo_arma` AS armas_tipo_arma,
+     disenos.`id` AS disenos_id,
+     disenos.`nombre` AS disenos_nombre,
+     disenos.`nivelprofesion` AS disenos_nivelprofesion,
+     disenos.`labor` AS disenos_labor,
+     disenos.`profesion` AS disenos_profesion,
+     habilidades.`id` AS habilidades_id,
+     habilidades.`nombre` AS habilidades_nombre,
+     habilidades.`clase` AS habilidades_clase,
+     habilidades.`imagen` AS habilidades_imagen,
+     habilidades.`tipo` AS habilidades_tipo,
+     usuarios.`iduser` AS usuarios_iduser,
+     usuarios.`nick` AS usuarios_nick,
+     usuarios.`nombre` AS usuarios_nombre,
+     usuarios.`email` AS usuarios_email,
+     usuarios.`password` AS usuarios_password
+FROM
+     `armas` armas,
+     `disenos` disenos,
+     `habilidades` habilidades,
+     `usuarios` usuarios]]>
+	</queryString>
+	<field name="armas_idarma" class="java.lang.Integer"/>
+	<field name="armas_nombre" class="java.lang.String"/>
+	<field name="armas_tipo" class="java.lang.String"/>
+	<field name="armas_tipo_arma" class="java.lang.String"/>
+	<field name="disenos_id" class="java.lang.Integer"/>
+	<field name="disenos_nombre" class="java.lang.String"/>
+	<field name="disenos_nivelprofesion" class="java.lang.Integer"/>
+	<field name="disenos_labor" class="java.lang.Integer"/>
+	<field name="disenos_profesion" class="java.lang.String"/>
+	<field name="habilidades_id" class="java.lang.Integer"/>
+	<field name="habilidades_nombre" class="java.lang.String"/>
+	<field name="habilidades_clase" class="java.lang.String"/>
+	<field name="habilidades_imagen" class="java.lang.String"/>
+	<field name="habilidades_tipo" class="java.lang.String"/>
+	<field name="usuarios_iduser" class="java.lang.Integer"/>
+	<field name="usuarios_nick" class="java.lang.String"/>
+	<field name="usuarios_nombre" class="java.lang.String"/>
+	<field name="usuarios_email" class="java.lang.String"/>
+	<field name="usuarios_password" class="java.lang.String"/>
+	<group name="armas_idarma">
+		<groupExpression><![CDATA[$F{armas_idarma}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#333333" uuid="0f133680-a07a-4c79-ba76-527cf589283a"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{armas_idarma}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="dc3359b1-5b8a-4a16-8ead-1a5581cb7461"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="disenos_id">
+		<groupExpression><![CDATA[$F{disenos_id}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="356b6ea2-447b-4079-813e-cae356fa2e0c"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{disenos_id}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="habilidades_id">
+		<groupExpression><![CDATA[$F{habilidades_id}]]></groupExpression>
+	</group>
+	<group name="usuarios_iduser">
+		<groupExpression><![CDATA[$F{usuarios_iduser}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="675d1c2d-c0c0-4ded-a831-7b06498a5736"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="ba25a3ca-95dd-447a-abd4-9c77830de044"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Wood Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="1a2051ee-6187-47c9-9676-7f88bf7fd543"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Wood SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="5c94dded-b14c-44f9-b846-7fb203606f8f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="37" height="15" uuid="17a829a1-cbc5-4039-bd6a-cf733ba97eae"/>
+				<text><![CDATA[armas_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="37" y="19" width="37" height="15" uuid="736e5046-6f82-41f0-99dc-089c12696b30"/>
+				<text><![CDATA[armas_tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="74" y="19" width="37" height="15" uuid="58fcd27c-0275-4bcb-b049-44dc75937694"/>
+				<text><![CDATA[armas_tipo_arma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="19" width="37" height="15" uuid="6ceaef00-19d5-47df-b977-01f2be97bdd5"/>
+				<text><![CDATA[disenos_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="148" y="19" width="37" height="15" uuid="7adf3dbd-d271-44c4-b2ca-2eb80d27e7f5"/>
+				<text><![CDATA[disenos_nivelprofesion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="37" height="15" uuid="149a3565-c073-4fcc-9f05-117329199f4a"/>
+				<text><![CDATA[disenos_labor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="19" width="37" height="15" uuid="e135e6b6-b6ac-4476-b7ef-cec68ec6209f"/>
+				<text><![CDATA[disenos_profesion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="259" y="19" width="37" height="15" uuid="511868ff-fa5d-46d2-acd4-ee31a7c910ff"/>
+				<text><![CDATA[habilidades_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="296" y="19" width="37" height="15" uuid="232bb300-c7d3-4987-9745-79075b8e9d62"/>
+				<text><![CDATA[habilidades_clase]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="19" width="37" height="15" uuid="68247cb7-975d-402a-9dc8-63fede373be6"/>
+				<text><![CDATA[habilidades_imagen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="37" height="15" uuid="69061504-9a85-42ad-a512-e50d5de0541c"/>
+				<text><![CDATA[habilidades_tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="407" y="19" width="37" height="15" uuid="3865add4-384c-4261-92de-1c0244f5d940"/>
+				<text><![CDATA[usuarios_nick]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="19" width="37" height="15" uuid="b9d71334-b8e5-44f3-bc9c-143276db551a"/>
+				<text><![CDATA[usuarios_nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="481" y="19" width="37" height="15" uuid="20125b93-6b8c-459c-844f-9f426f5f290f"/>
+				<text><![CDATA[usuarios_email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="518" y="19" width="37" height="15" uuid="b311764f-f9a1-42a5-90f0-cc3804767358"/>
+				<text><![CDATA[usuarios_password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="3bb25535-ec9a-4ae8-8d5c-bf3124136036"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="37" height="15" uuid="22210346-d041-48cf-b20e-3a7b6640a673"/>
+				<textFieldExpression><![CDATA[$F{armas_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="37" y="0" width="37" height="15" uuid="28e735c8-6b10-44c9-8c86-e1ea7911474a"/>
+				<textFieldExpression><![CDATA[$F{armas_tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="74" y="0" width="37" height="15" uuid="6ed7bb26-9d2a-4ba0-a4a3-02f9de3b9fc0"/>
+				<textFieldExpression><![CDATA[$F{armas_tipo_arma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="111" y="0" width="37" height="15" uuid="eb2477af-b588-4b8e-818e-06ec3cf0ae26"/>
+				<textFieldExpression><![CDATA[$F{disenos_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="148" y="0" width="37" height="15" uuid="3d4ba73f-134d-425e-b6ca-10bad339ce5b"/>
+				<textFieldExpression><![CDATA[$F{disenos_nivelprofesion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="37" height="15" uuid="5bbe1611-b850-4741-9534-6da95baed886"/>
+				<textFieldExpression><![CDATA[$F{disenos_labor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="222" y="0" width="37" height="15" uuid="2eb0a33b-6a84-4eca-bf70-cb3ab46c6b4c"/>
+				<textFieldExpression><![CDATA[$F{disenos_profesion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="259" y="0" width="37" height="15" uuid="59760e34-fc4c-4a29-8035-b12933029ec9"/>
+				<textFieldExpression><![CDATA[$F{habilidades_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="296" y="0" width="37" height="15" uuid="96902011-2147-4ef1-84e0-3946b7d80934"/>
+				<textFieldExpression><![CDATA[$F{habilidades_clase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="333" y="0" width="37" height="15" uuid="c89d840b-3bbd-4606-8b59-e33409dc06df"/>
+				<textFieldExpression><![CDATA[$F{habilidades_imagen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="37" height="15" uuid="5b4759e7-04c8-44b5-862c-39ce9337d31b"/>
+				<textFieldExpression><![CDATA[$F{habilidades_tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="407" y="0" width="37" height="15" uuid="ee319519-4960-4af9-a344-9354f68c714d"/>
+				<textFieldExpression><![CDATA[$F{usuarios_nick}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="444" y="0" width="37" height="15" uuid="02ea167f-323f-4b72-99a8-bc64e2d3b1a8"/>
+				<textFieldExpression><![CDATA[$F{usuarios_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="481" y="0" width="37" height="15" uuid="a9fb9321-ad8e-4a48-8ae9-d273bb6873fd"/>
+				<textFieldExpression><![CDATA[$F{usuarios_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="518" y="0" width="37" height="15" uuid="24711f5a-d8c2-449c-9164-5edcca470ffe"/>
+				<textFieldExpression><![CDATA[$F{usuarios_password}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="37aa9412-ba83-4811-aa8f-75785bf4b943"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="169aa75e-b361-4171-894e-a77c496d74a4"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6b1f40bf-fdb2-458c-a25a-e2318db830aa"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="77346898-2303-444d-8bd6-dcedd1dae9cb"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
