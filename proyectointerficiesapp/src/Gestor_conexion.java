@@ -22,6 +22,9 @@ public class Gestor_conexion {
     Statement stmt = null;
     ArrayList<String[]> datos = new ArrayList<String[]>();
     ArrayList<String>datoss = new ArrayList<>();
+    ArrayList<String>datosss = new ArrayList<>();
+    ArrayList<String>datos2 = new ArrayList<>();
+    ArrayList<String>dato = new ArrayList<>();
     Object[][] data;
     String[] cabeceras;
     String[] tablas;
@@ -64,6 +67,72 @@ public class Gestor_conexion {
                     temp = rs.getString(i);
                 }
                 datoss.add(temp);
+            }
+            rs.close();
+    }
+    public void consultar2(String sql) throws SQLException{
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData meta = rs.getMetaData();
+            //recogemos el numero de columnas de la consulta
+            int n = meta.getColumnCount();
+            cabeceras = new String[n];
+            //insertamos los nombres de las columnas en la array
+            for (int i = 1; i <= n; i++) {
+                cabeceras[i-1] = meta.getColumnName(i);
+            }
+            //varibales para contar el tamaño de la matriz
+            //recorremos la sentencia sql en la bbdd
+            datosss.clear();
+            while(rs.next()){
+                String temp ="";
+                for (int i = 1; i <= n; i++) {
+                    temp = rs.getString(i);
+                }
+                datosss.add(temp);
+            }
+            rs.close();
+    }
+    public void consultar3(String sql) throws SQLException{
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData meta = rs.getMetaData();
+            //recogemos el numero de columnas de la consulta
+            int n = meta.getColumnCount();
+            cabeceras = new String[n];
+            //insertamos los nombres de las columnas en la array
+            for (int i = 1; i <= n; i++) {
+                cabeceras[i-1] = meta.getColumnName(i);
+            }
+            //varibales para contar el tamaño de la matriz
+            //recorremos la sentencia sql en la bbdd
+            datos2.clear();
+            while(rs.next()){
+                String temp ="";
+                for (int i = 1; i <= n; i++) {
+                    temp = rs.getString(i);
+                }
+                datos2.add(temp);
+            }
+            rs.close();
+    }
+    public void consultar4(String sql) throws SQLException{
+            ResultSet rs = stmt.executeQuery(sql);
+            ResultSetMetaData meta = rs.getMetaData();
+            //recogemos el numero de columnas de la consulta
+            int n = meta.getColumnCount();
+            cabeceras = new String[n];
+            //insertamos los nombres de las columnas en la array
+            for (int i = 1; i <= n; i++) {
+                cabeceras[i-1] = meta.getColumnName(i);
+            }
+            //varibales para contar el tamaño de la matriz
+            //recorremos la sentencia sql en la bbdd
+            dato.clear();
+            while(rs.next()){
+                String temp ="";
+                for (int i = 1; i <= n; i++) {
+                    temp = rs.getString(i);
+                }
+                dato.add(temp);
             }
             rs.close();
     }

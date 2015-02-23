@@ -5,7 +5,6 @@
  */
 package xjq;
 
-import javax.xml.namespace.QName;
 import javax.xml.xquery.*;
 import net.xqj.basex.BaseXXQDataSource;
 
